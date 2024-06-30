@@ -36,10 +36,14 @@ Para que o projeto funcione corretamente, você precisa configurar duas variáve
 
     ```plaintext
     NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
-    BACK_URL=YOUR_BACKEND_URL
+    NEXT_PUBLIC_BACKEND_URL=YOUR_BACKEND_URL
     ```
 
 ## Rodando a Aplicação
+
+Para o frontend funcionar corretamente, é necessário instalar e rodar o backend. Siga as instruções no repositório do backend:
+
+[Repositório do Backend](https://github.com/DiogoAlberto0/SistemaDePonto_Back)
 
 1. Inicie o servidor de desenvolvimento:
 
@@ -68,4 +72,4 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ---
 
-Feito com ❤️ por [Diogo Alberto](https://github.com/DiogoAlberto0)
+Feito com ❤️ por [Seu Nome](https://seu-perfil.com)
