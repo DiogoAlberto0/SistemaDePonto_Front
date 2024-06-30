@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sistema de Ponto
 
-## Getting Started
+Este projeto é uma aplicação Next.js que fornece um sistema de registro de frequência de funcionários baseado na localização do funcionário em relação à empresa. Ele utiliza dispositivos de GPS para identificar as coordenadas do funcionário e verificar se o funcionário está em um raio predefinido em relação à empresa.
 
-First, run the development server:
+## Requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js v14.0.0 ou superior
+- npm v6.0.0 ou superior
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalação
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone o repositório:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    ```sh
+    git clone https://github.com/seu-usuario/sistema-de-ponto.git
+    ```
 
-## Learn More
+2. Navegue até o diretório do projeto:
 
-To learn more about Next.js, take a look at the following resources:
+    ```sh
+    cd sistema-de-ponto
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Instale as dependências:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```sh
+    npm install
+    ```
 
-## Deploy on Vercel
+## Configuração
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Para que o projeto funcione corretamente, você precisa configurar duas variáveis de ambiente: a chave de API do Google Maps e a URL de conexão com o backend.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Crie um arquivo `.env.local` na raiz do projeto.
+2. Adicione as seguintes linhas ao arquivo `.env.local`, substituindo os valores de exemplo pelos valores reais:
+
+    ```plaintext
+    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
+    BACK_URL=YOUR_BACKEND_URL
+    ```
+
+## Rodando a Aplicação
+
+1. Inicie o servidor de desenvolvimento:
+
+    ```sh
+    npm run dev
+    ```
+
+2. Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver a aplicação.
+
+## Scripts Disponíveis
+
+- `npm run dev`: Inicia o servidor de desenvolvimento.
+- `npm run build`: Compila a aplicação para produção.
+- `npm run start`: Inicia a aplicação em modo de produção.
+
+## Estrutura do Projeto
+
+- `pages/`: Contém as páginas da aplicação.
+- `components/`: Contém os componentes reutilizáveis.
+- `public/`: Contém arquivos estáticos como imagens e ícones.
+- `styles/`: Contém arquivos de estilo.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+Feito com ❤️ por [Diogo Alberto](https://github.com/DiogoAlberto0)
