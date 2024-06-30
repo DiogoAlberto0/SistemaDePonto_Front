@@ -1,0 +1,155 @@
+{
+  "positions": [
+    {
+      "id": 1,
+      "office": "funcionário",
+      "privilegeLevel": 1
+    },
+    {
+      "id": 2,
+      "office": "encarregado",
+      "privilegeLevel": 2
+    },
+    {
+      "id": 3,
+      "office": "gerente",
+      "privilegeLevel": 3
+    },
+    {
+      "id": 4,
+      "office": "admin",
+      "privilegeLevel": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Diogo Alberto Fontes Gomes de Oliveira",
+      "phone": "61986548270",
+      "password": "12345",
+      "token": "1",
+      "stationId": 1,
+      "positionId": 2 
+    }
+  ],
+  "stations": [
+    {
+      "id": 1,
+      "name": "Me põe na história",
+      "coords": {
+        "latitude": "-15.748927",
+        "longitude": "-47.884725"
+      }
+    }
+  ],
+  "timeSheet": [
+    {
+      "id": 1,
+      " userId": 1,
+      "day": 11,
+      "month": 6,
+      "year": 2024,
+      "first_entrance": 1718219239426,
+      "first_exit": 1718219363705,
+      "second_entrance": 1718219363730,
+      "second_exit": 1718219363135,
+      "missed": false
+    },
+    {
+      "id": 2,
+      " userId": 1,
+      "day": 12,
+      "month": 6,
+      "year": 2024,
+      "first_entrance": 1718219239426,
+      "first_exit": 1718219363705,
+      "second_entrance": 1718219363730,
+      "second_exit": 1718219363135,
+      "missed": false
+    },
+    {
+      "id": 3,
+      " userId": 1,
+      "day": 13,
+      "month": 6,
+      "year": 2024,
+      "first_entrance": 1718219239426,
+      "first_exit": 1718219363705,
+      "second_entrance": 1718219363730,
+      "second_exit": 1718219363135,
+      "missed": false
+    },
+    {
+      "id": 4,
+      " userId": 1,
+      "day": 14,
+      "month": 6,
+      "year": 2024,
+      "first_entrance": 1718219239426,
+      "first_exit": 1718219363705,
+      "second_entrance": 1718219363730,
+      "second_exit": 1718219363135,
+      "missed": false
+    },
+    {
+      "id": 5,
+      " userId": 1,
+      "day": 11,
+      "month": 6,
+      "year": 2024,
+      "first_entrance": null,
+      "first_exit": null,
+      "second_entrance": null,
+      "second_exit": null,
+      "missed": true
+    },
+    {
+      "id": "7dc9",
+      "year": 2024,
+      "month": 6,
+      "day": 13,
+      "first_entrance": 1718277906160,
+      "missed": false
+    },
+    {
+      "id": "f54b",
+      "year": 2024,
+      "month": 6,
+      "day": 13,
+      "first_entrance": 1718278497269,
+      "missed": false
+    }
+  ],
+  "months": [
+    {
+      "id": 0,
+      "month": 1,
+      "year": 2024
+    },
+    {
+      "id": 1,
+      "month": 2,
+      "year": 2024
+    },
+    {
+      "id": 2,
+      "month": 3,
+      "year": 2024
+    },
+    {
+      "id": 3,
+      "month": 4,
+      "year": 2024
+    },
+    {
+      "id": 4,
+      "month": 5,
+      "year": 2024
+    },
+    {
+      "id": 5,
+      "month": 6,
+      "year": 2024
+    }
+  ]
+}
