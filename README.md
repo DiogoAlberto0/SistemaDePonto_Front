@@ -12,13 +12,13 @@ Este projeto é uma aplicação Next.js que fornece um sistema de registro de fr
 1. Clone o repositório:
 
     ```sh
-    git clone https://github.com/seu-usuario/sistema-de-ponto.git
+    git clone https://github.com/DiogoAlberto0/SistemaDePonto_Front.git
     ```
 
 2. Navegue até o diretório do projeto:
 
     ```sh
-    cd sistema-de-ponto
+    cd SistemaDePonto_Front
     ```
 
 3. Instale as dependências:
