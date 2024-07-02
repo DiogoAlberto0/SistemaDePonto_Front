@@ -67,12 +67,4 @@ export const handleCreateOrUpdateStation = async (prevState: State, e: FormData)
         throw new Error(error.message || 'Ocorreu um erro inesperado')
     }
 
-
-
-
-    return ({
-        message: 'Ok',
-        status: 200
-    })
-
 }

@@ -1,5 +1,6 @@
 "use server"
 import { positionService } from "@/services/position.service";
+import { revalidatePath } from "next/cache";
 
 export interface State {
     message: string | undefined;
@@ -63,10 +64,7 @@ export const handleCreateOrUpdatePosition = async (prevState: State, e: FormData
         }
     } catch (error: any) {
         throw new Error(error.message || 'Ocorreu um erro inesperado')
+    } finally {
+        revalidatePath('/admin/positionRegisters')
     }
-
-    return ({
-        message: '',
-        status: 200
-    })
 } 

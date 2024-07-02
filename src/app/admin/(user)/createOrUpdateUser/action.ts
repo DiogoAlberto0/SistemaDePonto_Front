@@ -1,6 +1,7 @@
 "use server"
 
 import { userService } from "@/services/user.service";
+import { revalidatePath } from "next/cache";
 
 export interface ICreateUserState {
     message: string | undefined;
@@ -67,5 +68,7 @@ export const handleCreateUser = async (prevState: ICreateUserState, e: FormData)
         }
     } catch (error: any) {
         throw new Error(error.message || 'Ocorreu um erro inesperado')
+    } finally {
+        revalidatePath('/admin/userRegisters')
     }
 }
