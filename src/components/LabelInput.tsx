@@ -1,11 +1,12 @@
 import { DetailedHTMLProps, ReactNode } from "react";
 
-interface ILabelInputProps extends DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface ILabelInputProps extends DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     id: string;
     children: ReactNode;
     type: React.HTMLInputTypeAttribute;
+    inputClassName?: string;
 }
-export const LabelInput = ({ children, id, className, type, ...restProps }: ILabelInputProps) => {
+export const LabelInput = ({ children, id, className, type, inputClassName, ...restProps }: ILabelInputProps) => {
 
     return (
         <div className={`${className}`}>
@@ -21,7 +22,7 @@ export const LabelInput = ({ children, id, className, type, ...restProps }: ILab
                     ${type === 'checkbox' ?
                         'leading-tight h-5 w-5 text-green-600 focus:outline-none focus:shadow-outline focus:border-green-500'
                         :
-                        'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-green-500'
+                        `shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-green-500 ${inputClassName}`
                     }    
                 `}
                 type={type}

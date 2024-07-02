@@ -1,4 +1,6 @@
 import { positionService } from "@/services/position.service"
+import { authService } from "@/services/auth.service"
+import { redirect } from "next/navigation"
 
 import { BackButton } from "@/components/BackButton"
 import { ListItemLink } from "@/components/ListItemLink"
@@ -7,6 +9,12 @@ import { Title } from "@/components/Title"
 
 const PositionRegisters = async () => {
 
+    const { data } = await authService.getPrivilegeLevel()
+    if(!data?.privillegeLevel || data.privillegeLevel < 2) return redirect('signin')
+
+    const privillegeLevel = data.privillegeLevel
+
+    
     const positionsResponse = await positionService.getAllPositions()
     if(!positionsResponse.data) throw new Error(`${positionsResponse.status} | ${positionsResponse.error.message || 'Ocorreu um erro inesperado'}`)
 

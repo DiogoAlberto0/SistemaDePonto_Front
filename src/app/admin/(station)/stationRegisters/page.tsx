@@ -1,6 +1,8 @@
 import { stationService } from "@/services/stations.service"
+import { redirect } from "next/navigation"
+import { authService } from "@/services/auth.service"
 
-
+//components
 import { BackButton } from "@/components/BackButton"
 import { ListItemLink } from "@/components/ListItemLink"
 import { Title } from "@/components/Title"
@@ -8,6 +10,11 @@ import { Title } from "@/components/Title"
 
 
 const StationRegisters = async () => {
+
+    const { data } = await authService.getPrivilegeLevel()
+    if(!data?.privillegeLevel || data.privillegeLevel < 2) return redirect('signin')
+
+    const privillegeLevel = data.privillegeLevel
 
     const stationsResponse = await stationService.getAllStations()
     if (!stationsResponse.data) throw new Error(`${stationsResponse.status} | ${stationsResponse.error.message || 'Ocorreu um erro inesperado'}`)

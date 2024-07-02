@@ -1,12 +1,15 @@
+import { authService } from "@/services/auth.service"
+import { redirect } from "next/navigation"
+//components
 import { BackButton } from "@/components/BackButton"
 import { ListItemLink } from "@/components/ListItemLink"
-import { authService } from "@/services/auth.service"
-
 
 const Admin = async () => {
-    const response = await authService.getPrivilegeLevel()
 
-    const privilegeLevel = response.data?.privillegeLevel || 0
+    const { data } = await authService.getPrivilegeLevel()
+    if(!data?.privillegeLevel || data.privillegeLevel < 2) return  redirect('signin')
+
+    const privilegeLevel = data.privillegeLevel
 
     return (
         <main className="h-screen flex flex-col justify-between bg-gray-100 p-4">

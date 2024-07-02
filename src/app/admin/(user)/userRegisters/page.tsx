@@ -3,11 +3,16 @@ import { ListItemLink } from "@/components/ListItemLink"
 import { Title } from "@/components/Title"
 import { authService } from "@/services/auth.service"
 import { userService } from "@/services/user.service"
+import { redirect } from "next/navigation"
 
 
 const userRegisters = async () => {
 
-    const privillegeLevel  = (await authService.getPrivilegeLevel()).data?.privillegeLevel
+    const { data } = await authService.getPrivilegeLevel()
+    if(!data?.privillegeLevel || data.privillegeLevel < 2) return redirect('signin')
+
+    const privillegeLevel = data.privillegeLevel
+
     const response = await userService.getUsers()
     if (!response.data) throw new Error(`${response.status} - ${response.error.message}`)
 

@@ -2,13 +2,15 @@ import { ListItemLink } from "@/components/ListItemLink"
 import { Title } from "@/components/Title"
 import { authService } from "@/services/auth.service"
 import { userService } from "@/services/user.service"
+import { redirect } from "next/navigation"
 
 
 const Dashboard = async () => {
     const response = await authService.getPrivilegeLevel()
+    if(!response.data?.privillegeLevel || response.data.privillegeLevel < 1) redirect('signin')
 
     const userResponse = await userService.getUserById()
-    if(!userResponse.data) throw new Error(`${response.status} | ${response.error.message || 'Ocorreu um erro inesperado'}`)
+    if(!userResponse.data) throw new Error(`${response.status} | ${response.error?.message || 'Ocorreu um erro inesperado'}`)
 
     const user = userResponse.data.user
 

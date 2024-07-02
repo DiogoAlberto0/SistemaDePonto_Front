@@ -9,6 +9,7 @@ import { FormAlert } from "@/components/FormAlert"
 import { LabelInput } from "@/components/LabelInput"
 import { Form } from "@/components/Form"
 import { FormMain } from "@/components/FormMain"
+import { PasswordLabelInput } from "@/components/PasswordLabelInput"
 
 const initialState = {
     error: {
@@ -35,9 +36,11 @@ export default function Signin() {
                 </LabelInput>
                 {state?.error.phone && <FormAlert variant="danger">{state.error.phone}</FormAlert>}
 
-                <LabelInput id="password" name="password" type="password">
-                    Senha:
-                </LabelInput>
+                <div>
+                    <PasswordLabelInput id="password" name="password" type="">
+                        Senha:
+                    </PasswordLabelInput>
+                </div>
                 {state?.error.password && <FormAlert variant="danger">{state.error.password}</FormAlert>}
 
                 {state.error.message && <FormAlert variant="danger">{state.error.message}</FormAlert>}

@@ -4,9 +4,14 @@ import { TimeSheetAccordion } from './components/TimeSheetAccordion'
 
 import { getMonthsAndYears } from './data'
 import { Title } from '@/components/Title'
+import { authService } from '@/services/auth.service'
+import { redirect } from 'next/navigation'
 
 const TimeSheet = async () => {
 
+    const { data } = await authService.getPrivilegeLevel()
+    if(!data?.privillegeLevel || data.privillegeLevel < 1) redirect('signin')
+        
     const response = await getMonthsAndYears()
 
 
